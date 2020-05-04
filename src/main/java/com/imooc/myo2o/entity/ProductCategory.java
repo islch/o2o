@@ -1,7 +1,13 @@
-package com.im.o2o.entity;
+package com.imooc.myo2o.entity;
 
 import java.util.Date;
 
+/**
+ * @Description: 商品类别实体类
+ *
+ * @author tyronchen
+ * @date 2018年3月24日
+ */
 public class ProductCategory {
 	private Long productCategoryId;
 	private Long shopId;
@@ -65,11 +71,6 @@ public class ProductCategory {
 
 	public void setLastEditTime(Date lastEditTime) {
 		this.lastEditTime = lastEditTime;
-	}
-
-	public String toString() {
-		return "[productCategoryId=" + productCategoryId
-				+ ", productCategoryIdName=" + productCategoryName + "]";
 	}
 
 }

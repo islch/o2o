@@ -1,19 +1,23 @@
-package com.im.o2o.entity;
+package com.imooc.myo2o.entity;
 
 import java.util.Date;
 
+/**
+ * @Description: 商品类别实体类
+ *
+ * @author tyronchen
+ * @date 2018年3月24日
+ */
 public class ShopCategory {
 
 	private Long shopCategoryId;
 	private String shopCategoryName;
 	private String shopCategoryDesc;
 	private String shopCategoryImg;
-	//权重
 	private Integer priority;
 	private Date createTime;
 	private Date lastEditTime;
-	//上次菜单
-	private Long parentId;
+	private ShopCategory parent;
 
 	public Long getShopCategoryId() {
 		return shopCategoryId;
@@ -71,12 +75,12 @@ public class ShopCategory {
 		this.lastEditTime = lastEditTime;
 	}
 
-	public Long getParentId() {
-		return parentId;
+	public ShopCategory getParent() {
+		return parent;
 	}
 
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
+	public void setParent(ShopCategory parent) {
+		this.parent = parent;
 	}
 
 }

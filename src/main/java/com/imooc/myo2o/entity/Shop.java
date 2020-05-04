@@ -1,33 +1,44 @@
-package com.im.o2o.entity;
+package com.imooc.myo2o.entity;
 
 import java.util.Date;
-import java.util.List;
 
+/**
+ * @Description: tb_shop对应的实体类
+ *
+ * @author tyronchen
+ * @date 2018年3月24日
+ */
 public class Shop {
 
 	private Long shopId;
-	private Long ownerId;
-	// 上级id  店铺类别
-	private Long shopCategoryId;
 	private String shopName;
 	private String shopDesc;
 	private String shopAddr;
 	private String phone;
 	private String shopImg;
-	private Double longitude;
-	private Double latitude;
 	private Integer priority;
 	private Date createTime;
 	private Date lastEditTime;
-	//状态-1不可用 0审核中 1可用
+	/**
+	 * -1不可用 0审核中 1可用
+	 */
 	private Integer enableStatus;
-	//超级管理员给店铺的提醒
+	/**
+	 * 管理员给店家的提醒
+	 */
 	private String advice;
-
-	private List<ShopAuthMap> staffList;
+	/**
+	 * 店铺所属店主
+	 */
+	private PersonInfo owner;
+	/**
+	 * 店铺所在区域
+	 */
 	private Area area;
+	/**
+	 * 店铺类别
+	 */
 	private ShopCategory shopCategory;
-	private ShopCategory parentCategory;
 
 	public Long getShopId() {
 		return shopId;
@@ -35,22 +46,6 @@ public class Shop {
 
 	public void setShopId(Long shopId) {
 		this.shopId = shopId;
-	}
-
-	public Long getOwnerId() {
-		return ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-	}
-
-	public Long getShopCategoryId() {
-		return shopCategoryId;
-	}
-
-	public void setShopCategoryId(Long shopCategoryId) {
-		this.shopCategoryId = shopCategoryId;
 	}
 
 	public String getShopName() {
@@ -93,22 +88,6 @@ public class Shop {
 		this.shopImg = shopImg;
 	}
 
-	public Double getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(Double longitude) {
-		this.longitude = longitude;
-	}
-
-	public Double getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
-	}
-
 	public Integer getPriority() {
 		return priority;
 	}
@@ -141,12 +120,20 @@ public class Shop {
 		this.enableStatus = enableStatus;
 	}
 
-	public List<ShopAuthMap> getStaffList() {
-		return staffList;
+	public String getAdvice() {
+		return advice;
 	}
 
-	public void setStaffList(List<ShopAuthMap> staffList) {
-		this.staffList = staffList;
+	public void setAdvice(String advice) {
+		this.advice = advice;
+	}
+
+	public PersonInfo getOwner() {
+		return owner;
+	}
+
+	public void setOwner(PersonInfo owner) {
+		this.owner = owner;
 	}
 
 	public Area getArea() {
@@ -165,24 +152,11 @@ public class Shop {
 		this.shopCategory = shopCategory;
 	}
 
-	public String getAdvice() {
-		return advice;
-	}
-
-	public void setAdvice(String advice) {
-		this.advice = advice;
-	}
-
+	@Override
 	public String toString() {
-		return "[shopId=" + shopId + ", shopName=" + shopName + "]";
-	}
-
-	public ShopCategory getParentCategory() {
-		return parentCategory;
-	}
-
-	public void setParentCategory(ShopCategory parentCategory) {
-		this.parentCategory = parentCategory;
+		return "Shop [shopId=" + shopId + ", shopName=" + shopName + ", shopDesc=" + shopDesc + ", shopAddr=" + shopAddr + ", phone=" + phone + ", shopImg=" + shopImg + ", priority=" + priority
+				+ ", createTime=" + createTime + ", lastEditTime=" + lastEditTime + ", enableStatus=" + enableStatus + ", advice=" + advice + ", owner=" + owner + ", area=" + area + ", shopCategory="
+				+ shopCategory + "]";
 	}
 
 }

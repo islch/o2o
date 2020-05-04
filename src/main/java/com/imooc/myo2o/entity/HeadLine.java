@@ -1,7 +1,13 @@
-package com.im.o2o.entity;
+package com.imooc.myo2o.entity;
 
 import java.util.Date;
 
+/**
+ * @Description: 头条实体类
+ *
+ * @author tyronchen
+ * @date 2018年3月23日
+ */
 public class HeadLine {
 	private Long lineId;
 	private String lineName;

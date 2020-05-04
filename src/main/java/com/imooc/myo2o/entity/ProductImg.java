@@ -1,15 +1,24 @@
-package com.im.o2o.entity;
+package com.imooc.myo2o.entity;
 
 import java.util.Date;
 
+/**
+ * @Description: 商品图片实体类
+ *
+ * @author tyronchen
+ * @date 2018年3月24日
+ */
 public class ProductImg {
 	private Long productImgId;
 	private String imgAddr;
 	private String imgDesc;
 	private Integer priority;
 	private Date createTime;
-	//与商品是多对一
 	private Long productId;
+
+	// 与product联合查询字段
+	private String piImgAddr;
+	private String piImgDesc;
 
 	public Long getProductImgId() {
 		return productImgId;
@@ -57,6 +66,22 @@ public class ProductImg {
 
 	public void setProductId(Long productId) {
 		this.productId = productId;
+	}
+
+	public String getPiImgAddr() {
+		return piImgAddr;
+	}
+
+	public void setPiImgAddr(String piImgAddr) {
+		this.piImgAddr = piImgAddr;
+	}
+
+	public String getPiImgDesc() {
+		return piImgDesc;
+	}
+
+	public void setPiImgDesc(String piImgDesc) {
+		this.piImgDesc = piImgDesc;
 	}
 
 }

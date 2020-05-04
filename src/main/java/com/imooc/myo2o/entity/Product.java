@@ -1,31 +1,30 @@
-package com.im.o2o.entity;
+package com.imooc.myo2o.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Product implements Serializable{
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -349433539553804024L;
+/**
+ * @Description: 商品实体类
+ *
+ * @author tyronchen
+ * @date 2018年3月24日
+ */
+public class Product {
 	private Long productId;
 	private String productName;
 	private String productDesc;
 	private String imgAddr;// 简略图
-	private String normalPrice;
-	//折扣价
-	private String promotionPrice;
+	private String normalPrice;// 原价
+	private String promotionPrice;// 折后价
 	private Integer priority;
 	private Date createTime;
 	private Date lastEditTime;
-	private Integer enableStatus;
+	private Integer enableStatus;// 0、下架，1、在前端展示系统展示
 	private Integer point;
 
-	private List<ProductImg> productImgList;
-	private ProductCategory productCategory;
-	private Shop shop;
+	private List<ProductImg> productImgList;// 产品对应的详情列表,一对多
+	private ProductCategory productCategory;// 产品所属产品目录
+	private Shop shop;// 产品所属店铺
 
 	public Long getProductId() {
 		return productId;

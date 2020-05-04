@@ -44,7 +44,7 @@
 		<!-- 配置MyBaties全局配置文件:mybatis-config.xml -->
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
 		<!-- 扫描entity包 使用别名 -->
-		<property name="typeAliasesPackage" value="com.im.o2o.entity" />
+		<property name="typeAliasesPackage" value="com.imooc.myo2o.entity" />
 		<!-- 扫描sql配置文件:mapper需要的xml文件 -->
 		<property name="mapperLocations" value="classpath:mapper/*.xml" />
 	</bean>
@@ -55,6 +55,6 @@
 		<!-- 这一行似乎可以自动执行 -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 		<!-- 给出需要扫描Dao接口包 -->
-		<property name="basePackage" value="com.im.o2o.dao" />
+		<property name="basePackage" value="com.imooc.myo2o.dao" />
 	</bean>
 </beans>
