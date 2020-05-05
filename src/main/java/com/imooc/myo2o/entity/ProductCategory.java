@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @Description: 商品类别实体类
  *
- * @author tyronchen
+ * @author isLch
  * @date 2018年3月24日
  */
 public class ProductCategory {

@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @Description: 本地用户信息
  *
- * @author tyronchen
+ * @author isLch
  * @date 2018年3月24日
  */
 public class LocalAuth {
