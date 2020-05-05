@@ -10,6 +10,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 //来自commons-fileupload依赖
+import com.sun.javaws.IconUtil;
 import org.apache.commons.io.IOUtils;
 
 import org.springframework.mock.web.MockMultipartFile;
@@ -209,9 +210,9 @@ public class ImageUtil {
 	 */
 	public static void main(String[] args) {
 		try {
-			Thumbnails.of(new File("F:\\luffy.jpg")).size(400, 300)
+			Thumbnails.of(new File("D:\\islch\\test.jpg")).size(400, 300)
 					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "watermark.jpg")), 0.5f)
-					.outputQuality(0.8).toFile(new File("F:\\luffy-with-watermark.jpg"));
+					.outputQuality(0.8).toFile(new File("D:\\islch\\test-with-watermark.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

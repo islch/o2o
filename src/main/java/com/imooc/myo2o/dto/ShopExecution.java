@@ -5,9 +5,6 @@ import java.util.List;
 import com.imooc.myo2o.entity.Shop;
 import com.imooc.myo2o.enums.OperationStatusEnum;
 import com.imooc.myo2o.enums.ShopStateEnum;
-import com.imooc.myo2o.entity.Shop;
-import com.imooc.myo2o.enums.OperationStatusEnum;
-import com.imooc.myo2o.enums.ShopStateEnum;
 
 /**
  * @Description: 店铺返回结果信息
