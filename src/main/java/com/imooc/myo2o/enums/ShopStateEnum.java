@@ -3,7 +3,7 @@ package com.imooc.myo2o.enums;
 /**
  * @Description: 店铺状态枚举
  *
- * @author tyronchen
+ * @author isLch
  * @date 2018年4月10日
  */
 public enum ShopStateEnum {

@@ -7,8 +7,6 @@ import com.imooc.myo2o.entity.Area;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.imooc.myo2o.dao.AreaDao;
 import com.imooc.myo2o.service.AreaService;
 
@@ -18,12 +16,10 @@ public class AreaServiceImpl implements AreaService {
 	@Autowired
 	private AreaDao areaDao;
 
-	private static String AREALISTKEY = "arealist";
 
 	@Override
-	public List<Area> getAreaList() throws JsonParseException,
-			JsonMappingException, IOException {
-		return areaDao.queryArea();
+	public List<Area> getAreaList() {
+		return areaDao.selectArea();
 	}
 
 

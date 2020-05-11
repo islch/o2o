@@ -21,7 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * @Description: 店铺业务测试
  *
- * @author tyronchen
+ * @author isLch
  * @date 2018年4月15日
  */
 public class ShopServiceTest extends BaseTest {
@@ -29,7 +29,15 @@ public class ShopServiceTest extends BaseTest {
 	@Autowired
 	private ShopService shopService;
 
-
+	@Test
+	public void testModifyShop() throws IOException {
+		Shop shop = new Shop();
+		shop.setShopId(29L);
+		shop.setShopName("修改店铺测试");
+		String filePath = "D:\\皮皮猪\\180411.gif";
+		shopService.modifyShop(shop, path2MultipartFile(filePath));
+		System.out.println("修改后图片：" + shop.getShopImg());
+	}
 
 	@Test
 	public void testAddShop() throws IOException {
@@ -44,7 +52,7 @@ public class ShopServiceTest extends BaseTest {
 		shop.setShopCategory(shopCategory);
 		shop.setArea(area);
 		shop.setShopAddr("testService");
-		shop.setShopName("test店铺Service");
+		shop.setShopName("test店铺Service2");
 		shop.setShopDesc("testService");
 		shop.setShopImg("testService");
 		shop.setPhone("testService");
@@ -71,4 +79,23 @@ public class ShopServiceTest extends BaseTest {
 		return multipartFile;
 	}
 
+
+
+
+	@Test
+	public void testGetShopList() {
+		Shop shopCondition = new Shop();
+		PersonInfo personInfo = new PersonInfo();
+		personInfo.setUserId(1L);
+
+		shopCondition.setOwner(personInfo);
+		//shopCondition.setShopName("畅仔");
+
+		ShopExecution se = shopService.getShopList(shopCondition, 2, 2);
+		System.out.println("查询得到店铺数：" + se.getShopList().size());
+		System.out.println("店铺总数：" + se.getCount());
+		se = shopService.getShopList(shopCondition, 2, 2);
+		System.out.println("查询得到店铺数：" + se.getShopList().size());
+		System.out.println("店铺总数：" + se.getCount());
+	}
 }

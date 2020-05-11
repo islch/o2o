@@ -19,45 +19,8 @@ public class AreaDaoTest extends BaseTest {
 	private AreaDao areaDao;
 
 	@Test
-	public void testAInsertArea() throws Exception {
-		Area area = new Area();
-		area.setAreaName("区域1");
-//		area.setAreaDesc("区域1");
-		area.setPriority(1);
-		area.setCreateTime(new Date());
-		area.setLastEditTime(new Date());
-		int effectedNum = areaDao.insertArea(area);
-		assertEquals(1, effectedNum);
-	}
-
-	@Test
-	public void testBQueryArea() throws Exception {
-		List<Area> areaList = areaDao.queryArea();
-		assertEquals(4, areaList.size());
-	}
-
-	@Test
-	public void testCUpdateArea() throws Exception {
-		Area area = new Area();
-		area.setAreaId(1);
-		area.setAreaName("南苑");
-		area.setLastEditTime(new Date());
-		int effectedNum = areaDao.updateArea(area);
-		assertEquals(1, effectedNum);
-	}
-
-	@Test
-	public void testDDeleteArea() throws Exception {
-		long areaId = -1;
-		List<Area> areaList = areaDao.queryArea();
-		for (Area myArea : areaList) {
-			if ("区域1".equals(myArea.getAreaName())) {
-				areaId = myArea.getAreaId();
-			}
-		}
-		List<Long> areaIdList = new ArrayList<Long>();
-		areaIdList.add(areaId);
-		int effectedNum = areaDao.batchDeleteArea(areaIdList);
-		assertEquals(1, effectedNum);
+	public void testQueryArea() {
+		List<Area> areaList = areaDao.selectArea();
+		System.out.println("dao测试：" + areaList.toString());
 	}
 }

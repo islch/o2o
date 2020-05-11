@@ -3,7 +3,7 @@ package com.imooc.myo2o.enums;
 /**
  * @Description: 操作状态枚举
  *
- * @author tyronchen
+ * @author isLch
  * @date 2018年11月29日
  */
 public enum OperationStatusEnum {

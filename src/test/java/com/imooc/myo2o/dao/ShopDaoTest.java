@@ -3,6 +3,7 @@ package com.imooc.myo2o.dao;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
+import java.util.List;
 
 import com.imooc.myo2o.entity.Area;
 import com.imooc.myo2o.entity.PersonInfo;
@@ -63,4 +64,30 @@ public class ShopDaoTest extends BaseTest {
 		System.out.println("effectNum：" + effectNum);
 	}
 
+    @Test
+    public void testQueryShop() {
+        Shop shop = shopDao.selectByShopId(1);
+        System.out.println("areaName:" + shop.getArea().getAreaName());
+        System.out.println("shopCategoryName:" + shop.getShopCategory().getShopCategoryName());
+
+        //这里是null
+        //System.out.println(shop.getShopCategory().getCreateTime());
+
+        //查询语句没有关联personInfo，所以是空指针
+        // System.out.println(shop.getOwner().toString());
+    }
+
+    @Test
+    public void testQueryShopList() {
+        Shop shopCondition = new Shop();
+        ShopCategory childCategory = new ShopCategory();
+        ShopCategory parentCategory = new ShopCategory();
+        parentCategory.setShopCategoryId(1L);
+        childCategory.setParent(parentCategory);
+        shopCondition.setShopCategory(childCategory);
+        List<Shop> shopList = shopDao.selectShopList(shopCondition, 0, 3);
+        System.out.println("查询店铺列表的大小：" + shopList.size());
+        int shopCount = shopDao.selectShopCount(shopCondition);
+        System.out.println("店铺列表总数大小：" + shopCount);
+    }
 }

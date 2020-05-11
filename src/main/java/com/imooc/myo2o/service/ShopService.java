@@ -8,7 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * @Description: 店铺业务接口
  *
- * @author tyronchen
+ * @author isLch
  * @date 2018年4月13日
  */
 public interface ShopService {
@@ -19,7 +19,7 @@ public interface ShopService {
 	 * @param shopId
 	 * @return
 	 */
-//	Shop getByShopId(long shopId);
+	Shop getByShopId(long shopId);
 
 	/**
 	 * 添加店铺
@@ -37,7 +37,7 @@ public interface ShopService {
 	 * @param shopImg
 	 * @return
 	 */
-//	ShopExecution modifyShop(Shop shop, MultipartFile shopImg) throws ShopOperationException;
+	ShopExecution modifyShop(Shop shop, MultipartFile shopImg) throws ShopOperationException;
 
 	/**
 	 * 获取店铺分页列表
@@ -48,5 +48,5 @@ public interface ShopService {
 	 * @return
 	 * @throws ShopOperationException
 	 */
-//	ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) throws ShopOperationException;
+	ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) throws ShopOperationException;
 }
