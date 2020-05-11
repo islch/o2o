@@ -147,7 +147,7 @@
     <dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
-      <version>1.3.2</version>
+      <version>1.3.3</version>
     </dependency>
 
     <!--    不加这个在加水印时候会出现Numbers of source Raster bands and source color space components do not match错误-->
